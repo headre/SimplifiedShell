@@ -8,7 +8,7 @@ void running(){
     switch (a.sequence)
     {
     case 0:
-        return 0;
+        exit(0);
         break;
     case 1:
         info();

@@ -13,6 +13,9 @@ struct Command parse(char *commandinput)
         PiecePart[i]=Piece;
         i++;
     }
+    if(strcmp(PiecePart[0],"exit")==0){
+        template.sequence=0;
+    }
     if(strcmp(PiecePart[0],"info")==0){
         template.sequence=1;
     }
