@@ -10,7 +10,7 @@
 typedef struct Command
 {
     int sequence;
-    char * args[4];
+    char * args[6];
 }command;
 command parse(char *commandinput);
 void info();
@@ -19,3 +19,4 @@ int cd(char *TargetPath);
 void running();
 void ex(char *ARGS[]);
 int grep_c(char * ARGS[]);
+void executeR(command a);
