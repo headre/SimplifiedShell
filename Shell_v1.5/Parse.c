@@ -40,7 +40,7 @@ command parse(char *commandinput)
         }
         i++;
     }
-    if(template.sequence<10&&template.sequence>0){
+    if(template.sequence<10&&template.sequence>=0){
         if(strcmp(PiecePart[0],"exit")==0){
             template.sequence=0;
         }

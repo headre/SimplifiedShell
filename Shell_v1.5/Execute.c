@@ -88,8 +88,8 @@ int grep_c(char *ARGS[]){
     source[i]=0;
     i=0;
     int status,regcompsuc,cflags = REG_EXTENDED;
-    regmatch_t pmatch[6];
-    const size_t nmatch =6;
+    regmatch_t pmatch[1];
+    const size_t nmatch =1;
     regex_t *reg;
 
     while(ARGS[2]+i!=NULL&&i<strlen(ARGS[2])){
@@ -153,7 +153,7 @@ void executeR(command a){
         printf("\033[2J\033[1;1H");
         break;
     case UNKNOWN:
-        printf("unknown commands,plese check your commands, enter 'help' for more information\n");
+        printf("unknown commands,plese check your commands, enter \033[1mhelp\033[0m for more information\n");
         break;
     case HELP:
         printTip();
@@ -184,7 +184,6 @@ void pipeEx(char **args){
         }
         else
         {
-            printf("father %d",pid);
             close(pd[1]);
             if(dup2(pd[0],0)==-1){
                 perror("dup2 out");
@@ -200,7 +199,6 @@ void pipeEx(char **args){
 }
 void red(char *arglist[]){
     int fd;
-    wait(NULL);
     pid_t pid = fork();
     if(pid<0){
         perror("fork()");
